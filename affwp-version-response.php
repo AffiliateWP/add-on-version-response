@@ -101,7 +101,7 @@ class AFFWP_Add_On_Version_Response {
                 $hash          = md5( $download_name . $file_key . $add_on_id . $license_key . $expires );
                 $url           = str_replace( ':', '@', $url );
 
-                $token = base64_encode( sprintf( '%s:%s:%d:%s:%s', $expires, $license_key, $add_on_id, $hash, $url ) );
+                $token = base64_encode( sprintf( '%s:%s:%d:%s:%s:%d', $expires, $license_key, $add_on_id, $hash, $url, 0 ) );
 
                 $package_url = trailingslashit( home_url() ) . 'edd-sl/package_download/' . $token;
 
